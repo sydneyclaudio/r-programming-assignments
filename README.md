@@ -5,6 +5,41 @@ Course: LIS4370
 
 Description: Repository for R Programming Assignments.
 
+Module # 4 Programming structure assignment RStudio code
+# Create vectors
+
+Freq <- c(0.6,0.3,0.4,0.4,0.2,0.6,0.3,0.4,0.9,0.2)
+bloodp <- c(103,87,32,42,59,109,78,205,135,176)
+#bad=1 good=0
+First <- c(1,1,1,1,0,0,0,0,NA,1)
+#low=0 high=1
+Second <- c(0,0,1,1,0,0,1,1,1,1)
+#low=0 high=1
+FinalDecision <- c(0,1,0,1,0,1,0,1,1,1) 
+
+#Combining data into a dataframe
+
+hospital_data <- data.frame(
+  Freq,
+  bloodp,
+  First,
+  Second,
+  FinalDecision
+)
+
+#Creating a side-by-side boxplot and histogram
+
+par(mfrow=c(1,2))
+
+boxplot(bloodp,
+        main="Boxplot of Patient Blood Pressure",
+        ylab="Blood Pressure")
+
+hist(bloodp,
+     main="Histogram of Patient Blood Pressure",
+     xlab="Blood Pressure")
+
+
 ## Module # 2 Assignment Blog Post
 
 Blog post explaining debugging and correcting the `myMean` function:  
