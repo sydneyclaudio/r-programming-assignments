@@ -5,6 +5,26 @@ Course: LIS4370
 
 Description: Repository for R Programming Assignments.
 
+Module # 5 Doing Math
+
+# Create Matrix A (10x10)
+A <- matrix(1:100, nrow = 10)
+
+# Create Matrix B (10x100)
+B <- matrix(1:1000, nrow = 10)
+
+# View matrices
+A
+B
+
+# Determinant of A
+det_A <- det(A)
+det_A
+
+# Inverse of A
+inv_A <- solve(A)
+
+
 Module # 4 Programming structure assignment RStudio code
 # Create vectors
 
