@@ -4,6 +4,50 @@ Name: Sydney Claudio
 Course: LIS4370 
 Description: Repository for R Programming Assignments.
 
+# OO Systems in R – S3 and S4 Example
+
+#Load dataset
+data("mtcars")
+
+#S3 Example
+
+student <- function(n, a, g) {
+  if (g > 4 || g < 0)
+    stop("GPA must be between 0 and 4")
+
+  value <- list(name = n, age = a, GPA = g)
+  attr(value, "class") <- "student"
+  value
+}
+
+print.student <- function(x) {
+  cat("Student:", x$name,
+      "| Age:", x$age,
+      "| GPA:", x$GPA, "\n")
+}
+
+s <- student("Paul", 26, 3.7)
+s
+
+#S4 Example
+library(methods)
+
+setClass(
+  "studentS4",
+  slots = c(
+    name = "character",
+    age = "numeric",
+    GPA = "numeric"
+  )
+)
+
+s4 <- new("studentS4",
+          name = "John",
+          age = 21,
+          GPA = 3.5)
+
+s4
+
 # Module 6 – Matrix Operations in R
 
 #Step 1 is to create matrices A and B
