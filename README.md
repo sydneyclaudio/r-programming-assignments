@@ -4,6 +4,30 @@ Name: Sydney Claudio
 Course: LIS4370 
 Description: Repository for R Programming Assignments.
 
+# Module 8 - Input/Output, String Manipulation,
+# Install/load package
+install.packages("plyr")
+library(plyr)
+
+# Step 1: Import dataset
+x <- read.table(file.choose(), header = TRUE, sep = ",")
+
+# View data
+x
+
+# Find mean Grade by Sex using plyr
+students_gendered_mean <- ddply(x, "Sex", transform,
+                                +                                 Grade.Average = mean(Grade))
+# Write output to a file
+write.table(students_gendered_mean, "Students_Gendered_Mean", sep = ",")
+
+# Step 2: Filter names containing the letter i
+i_students <- subset(x, grepl("i", x$Name))
+i_students
+
+# Step 3: Write filtered dataset to CSV
+write.table(i_students, "Students_With_I.csv", sep = ",", row.names = FALSE)
+
 # OO Systems in R – S3 and S4 Example
 
 #Load dataset
