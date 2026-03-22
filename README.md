@@ -4,6 +4,70 @@ Name: Sydney Claudio
 Course: LIS4370 
 Description: Repository for R Programming Assignments.
 
+# Assignment #9
+# Visualization in R – Base Graphics, Lattice, and ggplot2
+
+# Load dataset
+data("iris", package = "datasets")
+head(iris)
+
+# Base R Graphics
+
+# Scatter plot
+plot(iris$Sepal.Length, iris$Petal.Length,
+     main = "Base R: Sepal Length vs Petal Length",
+     xlab = "Sepal Length",
+     ylab = "Petal Length",
+     col = as.numeric(iris$Species),
+     pch = 19)
+
+# Histogram
+hist(iris$Sepal.Width,
+     main = "Base R: Distribution of Sepal Width",
+     xlab = "Sepal Width",
+     col = "lightgray",
+     border = "white")
+
+
+# Lattice Graphics
+
+library(lattice)
+
+# Conditioned scatter plot
+xyplot(Petal.Length ~ Sepal.Length | Species,
+       data = iris,
+       main = "Lattice: Petal Length vs Sepal Length by Species",
+       xlab = "Sepal Length",
+       ylab = "Petal Length")
+
+# Box plot
+bwplot(Sepal.Width ~ Species,
+       data = iris,
+       main = "Lattice: Sepal Width by Species",
+       xlab = "Species",
+       ylab = "Sepal Width")
+
+
+# ggplot2
+
+library(ggplot2)
+
+# Scatter plot with smoothing
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "ggplot2: Petal Length vs Sepal Length by Species",
+       x = "Sepal Length",
+       y = "Petal Length")
+
+# Faceted histogram
+ggplot(iris, aes(x = Sepal.Width)) +
+  geom_histogram(binwidth = 0.2) +
+  facet_wrap(~ Species) +
+  labs(title = "ggplot2: Sepal Width Distribution by Species",
+       x = "Sepal Width",
+       y = "Count")
+
 # Module 8 - Input/Output, String Manipulation,
 # Install/load package
 install.packages("plyr")
