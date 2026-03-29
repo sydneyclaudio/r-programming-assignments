@@ -1,0 +1,13 @@
+Package: Friedman
+Title: Student Data Analysis and Visualization Tools
+Version: 0.0.0.9000
+Authors@R: 
+    person("Sydney", "Claudio", role = c("aut", "cre"))
+Description: 
+    This package provides simple tools for analyzing and visualizing 
+    student datasets. It focuses on basic data cleaning, summary 
+    statistics, and creating clear visualizations for beginner users.
+Depends: R (>= 3.1.2)
+Imports: ggplot2, dplyr
+License: CC0
+LazyData: true
