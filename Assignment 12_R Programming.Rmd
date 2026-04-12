@@ -1,0 +1,44 @@
+---
+title: "My R Markdown Primer"
+author: "Sydney Claudio"
+date: "April 13, 2026"
+output: html_document
+---
+
+# Introduction
+
+R Markdown is a tool that allows users to combine narrative writing, R code, and output into a single document. This makes it easier to create reports that are both readable and reproducible. Instead of separating code and analysis, everything is kept in one place.
+
+# Narrative Section
+
+This is an example of a narrative paragraph written in Markdown. Markdown is simple to use and allows for formatting such as **bold text**, *italic text*, and headers. It is useful for writing reports because it keeps formatting clean and easy to read.
+
+# Math Expressions
+
+Here is an inline math expression: $\alpha + \beta = \gamma$
+
+Here is a displayed equation:
+
+$$
+E = mc^2
+$$
+
+# Code Chunk 1: Load Data
+
+```{r}
+# Load built-in dataset
+data(mtcars)
+
+# View first few rows
+head(mtcars)
+
+# Summary of dataset
+summary(mtcars)
+
+# Basic plot
+plot(mtcars$wt, mtcars$mpg,
+     main = "Car Weight vs MPG",
+     xlab = "Weight",
+     ylab = "Miles Per Gallon")
+
+# Conclusion Paragraph: Using R Markdown was a helpful experience because it allowed me to combine writing and code into one document. Compared to writing a plain report, R Markdown makes it easier to show data analysis alongside explanations. One challenge was learning the syntax for code chunks and formatting, but once understood, it became straightforward to use.
